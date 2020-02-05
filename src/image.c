@@ -456,7 +456,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             //}
             //printf("\n");
 
-            int width = im.h * .012;
+            int width = im.h * .006;
 
             if(0){
                 width = pow(prob, 1./2.)*10+1;
@@ -492,10 +492,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             printf("\n");
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
-            if (alphabet) {
-                image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
-                draw_label(im, top + width, left, label, rgb);
-            }
+            // if (alphabet) {
+            //     image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
+            //     draw_label(im, top + width, left, label, rgb);
+            // }
         }
     }
 }
